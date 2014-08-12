@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT type="Advanced Installer" version="1.9" modules="professional" RootPath=".">
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="CTRLS" Value="3"/>
+    <ROW Property="RUNAPPLICATION" Value="1"/>
+    <ROW Property="VIEWREADME" Value="1"/>
+    <ROW Property="ProductName" Value="Spoken Word"/>
+    <ROW Property="ALLUSERS" Value="2"/>
+    <ROW Property="BannerBitmap" Value="installer_background.jpg"/>
+    <ROW Property="ProductVersion" Value="1.0.0"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
+    <ROW Property="UpgradeCode" Value="{0228778E-CDF4-4786-957F-7FE37FF711C7}"/>
+    <ROW Property="ProductCode" Value="{ED1DF5BD-3D96-41DA-9354-9E2F0392CA09}"/>
+    <ROW Property="ARPPRODUCTICON" Value="controlPanelIcon.exe"/>
+    <ROW Property="DialogBitmap" Value="installer_background_dialog.jpg"/>
+    <ROW Property="Manufacturer" Value="Craig Lotter"/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="Inputs_DIR" Directory_Parent="TARGETDIR" DefaultDir="Inputs"/>
+    <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" Directory_Parent="" DefaultDir="SourceDir"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="Interop.Microsoft.Office.Core.dll" ComponentId="{7EE328FF-7BAE-4D26-BA2E-DF9525ABCD4D}" Directory_="TARGETDIR" Attributes="0" Condition="" KeyPath="Interop.Microsoft.Office.Core.dll" FullKeyPath="TARGETDIR\Interop.Microsoft.Office.Core.dll"/>
+    <ROW Component="Interop.SpeechLib.dll" ComponentId="{0A51F4DF-F1D2-4B1C-AA8F-FD9496AEC1A1}" Directory_="TARGETDIR" Attributes="0" Condition="" KeyPath="Interop.SpeechLib.dll" FullKeyPath="TARGETDIR\Interop.SpeechLib.dll"/>
+    <ROW Component="Inputs.txt" ComponentId="{4EBE1BA7-86D0-4514-ACA0-63A3AD0DF8DA}" Directory_="Inputs_DIR" Attributes="0" Condition="" KeyPath="Inputs.txt" FullKeyPath="TARGETDIR\Inputs"/>
+    <ROW Component="Interop.VBIDE.dll" ComponentId="{C5483211-65F0-4555-A9A8-DD05EF9E7CB6}" Directory_="TARGETDIR" Attributes="0" Condition="" KeyPath="Interop.VBIDE.dll" FullKeyPath="TARGETDIR\Interop.VBIDE.dll"/>
+    <ROW Component="Interop.Word.dll" ComponentId="{AA5E75B9-5EE7-4DB7-835C-049E60DD6EE2}" Directory_="TARGETDIR" Attributes="0" Condition="" KeyPath="Interop.Word.dll" FullKeyPath="TARGETDIR\Interop.Word.dll"/>
+    <ROW Component="ReaderTTSInstallENG.exe" ComponentId="{C647F400-6153-4637-BF1D-7C196EDA33CA}" Directory_="TARGETDIR" Attributes="0" Condition="" KeyPath="ReaderTTSInstallENG.exe" FullKeyPath="TARGETDIR\ReaderTTSInstallENG.exe"/>
+    <ROW Component="Spoken_Word.exe" ComponentId="{40E23B02-1243-44A8-B8C1-3B959C8CF5B7}" Directory_="TARGETDIR" Attributes="0" Condition="" KeyPath="Spoken_Word.exe" FullKeyPath="TARGETDIR\Spoken Word.exe"/>
+    <ROW Component="Application_Loader.exe" ComponentId="{858DCB8F-0AD9-4237-A882-E0660B6154F1}" Directory_="TARGETDIR" Attributes="0" Condition="" KeyPath="Application_Loader.exe" FullKeyPath="TARGETDIR\Application_Loader.exe"/>
+    <ROW Component="Description.txt" ComponentId="{19287595-9C1F-4C76-85AB-C336082DF7CD}" Directory_="TARGETDIR" Attributes="0" Condition="" KeyPath="Description.txt" FullKeyPath="TARGETDIR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Feature_Parent="" Title="MainFeature" Description="Description" Display="2" Level="1" Directory_="TARGETDIR" Attributes="0" Components="Application_Loader.exe Description.txt Inputs.txt Interop.Microsoft.Office.Core.dll Interop.SpeechLib.dll Interop.VBIDE.dll Interop.Word.dll ReaderTTSInstallENG.exe Spoken_Word.exe"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="Interop.Microsoft.Office.Core.dll" Component_="Interop.Microsoft.Office.Core.dll" FileName="Intero~1.dll|Interop.Microsoft.Office.Core.dll" Version="" Language="" Attributes="" SourcePath="..\Spoken Word\Required Files\Interop.Microsoft.Office.Core.dll" SelfReg="false"/>
+    <ROW File="Interop.SpeechLib.dll" Component_="Interop.SpeechLib.dll" FileName="Intero~2.dll|Interop.SpeechLib.dll" Version="" Language="" Attributes="" SourcePath="..\Spoken Word\Required Files\Interop.SpeechLib.dll" SelfReg="false"/>
+    <ROW File="Splash_Image.jpg" Component_="Inputs.txt" FileName="Splash~1.jpg|Splash_Image.jpg" Version="" Language="" Attributes="" SourcePath="..\Spoken Word\Required Files\Inputs\Splash_Image.jpg" SelfReg="false"/>
+    <ROW File="Inputs.txt" Component_="Inputs.txt" FileName="Inputs.txt" Version="" Language="" Attributes="" SourcePath="..\Spoken Word\Required Files\Inputs\Inputs.txt" SelfReg="false"/>
+    <ROW File="Interop.Word.dll" Component_="Interop.Word.dll" FileName="Intero~4.dll|Interop.Word.dll" Version="" Language="" Attributes="" SourcePath="..\Spoken Word\Required Files\Interop.Word.dll" SelfReg="false"/>
+    <ROW File="Readme_SpokenWord.doc" Component_="Description.txt" FileName="Readme~1.doc|Readme - SpokenWord.doc" Version="" Language="" Attributes="" SourcePath="..\Spoken Word\Required Files\Readme - SpokenWord.doc" SelfReg="false"/>
+    <ROW File="Application_Loader.exe" Component_="Application_Loader.exe" FileName="Applic~1.exe|Application_Loader.exe" Version="" Language="" Attributes="" SourcePath="..\Spoken Word\Required Files\Application_Loader.exe" SelfReg="false"/>
+    <ROW File="Description.txt" Component_="Description.txt" FileName="Descri~1.txt|Description.txt" Version="" Language="" Attributes="" SourcePath="..\Spoken Word\Required Files\Description.txt" SelfReg="false"/>
+    <ROW File="Interop.VBIDE.dll" Component_="Interop.VBIDE.dll" FileName="Intero~3.dll|Interop.VBIDE.dll" Version="" Language="" Attributes="" SourcePath="..\Spoken Word\Required Files\Interop.VBIDE.dll" SelfReg="false"/>
+    <ROW File="ReaderTTSInstallENG.exe" Component_="ReaderTTSInstallENG.exe" FileName="Reader~1.exe|ReaderTTSInstallENG.exe" Version="" Language="" Attributes="" SourcePath="..\Spoken Word\Required Files\ReaderTTSInstallENG.exe" SelfReg="false"/>
+    <ROW File="Spoken_Word.exe" Component_="Spoken_Word.exe" FileName="Spoken~1.exe|Spoken Word.exe" Version="" Language="" Attributes="" SourcePath="..\Spoken Word\Required Files\Spoken Word.exe" SelfReg="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_DOWNGRADE" Type="19" Source="" Target="A higher version of [ProductName] is installed."/>
+    <ROW Action="AI_ViewReadme" Type="194" Source="viewer.exe" Target="[#Readme_SpokenWord.doc]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="AI_LaunchApp" Type="194" Source="viewer.exe" Target="[#Application_Loader.exe]"/>
+    <ROW Action="SET_TARGETDIR" Type="307" Source="TARGETDIR" Target="[ProgramFilesFolder]\[ProductName]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="UpgradeCode" VersionMin="" VersionMax="ProductVersion" Language="" Attributes="1025" Remove=""/>
+    <ROW UpgradeCode="UpgradeCode" VersionMin="ProductVersion" VersionMax="" Language="" Attributes="2" Remove=""/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiMergeModsComponent">
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="Spoken_Word" Directory_="SHORTCUTDIR" Name="Spoken~1|Spoken Word" Component_="Interop.Microsoft.Office.Core.dll" Target="[TARGETDIR]Application_Loader.exe" Arguments="" Description="" Hotkey="0" Icon_="controlPanelIcon.exe" IconIndex="0" ShowCmd="1" WkDir=""/>
+    <ROW Shortcut="Uninstall_Spoken_Word" Directory_="SHORTCUTDIR" Name="Uninst~1|Uninstall Spoken Word" Component_="Interop.Microsoft.Office.Core.dll" Target="[SystemFolder]msiexec.exe" Arguments="/x [ProductCode]" Description="" Hotkey="0" Icon_="SystemFolder_msiexec.exe" IconIndex="0" ShowCmd="1" WkDir=""/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
+    <ROW Name="SystemFolder_msiexec.exe" SourcePath="&lt;uninstall.ico&gt;" Index="0"/>
+    <ROW Name="controlPanelIcon.exe" SourcePath="Images\Application_Icon.ico" Index="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="installer_background.jpg" SourcePath="Images\installer_background.jpg"/>
+    <ROW Name="installer_background_dialog.jpg" SourcePath="Images\installer_background_dialog.jpg"/>
+    <ROW Name="viewer.exe" SourcePath="&lt;viewer.exe&gt;"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ATTRIBUTE name="Start" value="WelcomeDlg FolderDlg VerifyReadyDlg"/>
+    <ATTRIBUTE name="Progress" value="ProgressDlg"/>
+    <ATTRIBUTE name="End" value="ExitDialog"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.PreReqComponent">
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiMediaComponent">
+    <ATTRIBUTE name="InstallationType" value="1"/>
+    <ATTRIBUTE name="MediaSize" value="0"/>
+    <ATTRIBUTE name="Compress" value="1"/>
+    <ATTRIBUTE name="Package" value="10"/>
+    <ATTRIBUTE name="PackageName" value="Release\Spoken Word Installer"/>
+    <ATTRIBUTE name="IconPath" value="Images\Application_Icon.ico?0"/>
+  </COMPONENT>
+</DOCUMENT>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://www.webservicex.net/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://www.webservicex.net/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.webservicex.net/">
+      <s:element name="Translate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LanguageMode" type="s0:Language" />
+            <s:element minOccurs="0" maxOccurs="1" name="Text" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="Language">
+        <s:restriction base="s:string">
+          <s:enumeration value="EnglishTOChinese" />
+          <s:enumeration value="EnglishTOFrench" />
+          <s:enumeration value="EnglishTOGerman" />
+          <s:enumeration value="EnglishTOItalian" />
+          <s:enumeration value="EnglishTOJapanese" />
+          <s:enumeration value="EnglishTOKorean" />
+          <s:enumeration value="EnglishTOPortuguese" />
+          <s:enumeration value="EnglishTOSpanish" />
+          <s:enumeration value="ChineseTOEnglish" />
+          <s:enumeration value="FrenchTOEnglish" />
+          <s:enumeration value="FrenchTOGerman" />
+          <s:enumeration value="GermanTOEnglish" />
+          <s:enumeration value="GermanTOFrench" />
+          <s:enumeration value="ItalianTOEnglish" />
+          <s:enumeration value="JapaneseTOEnglish" />
+          <s:enumeration value="KoreanTOEnglish" />
+          <s:enumeration value="PortugueseTOEnglish" />
+          <s:enumeration value="RussianTOEnglish" />
+          <s:enumeration value="SpanishTOEnglish" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="TranslateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TranslateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </types>
+  <message name="TranslateSoapIn">
+    <part name="parameters" element="s0:Translate" />
+  </message>
+  <message name="TranslateSoapOut">
+    <part name="parameters" element="s0:TranslateResponse" />
+  </message>
+  <message name="TranslateHttpGetIn">
+    <part name="LanguageMode" type="s:string" />
+    <part name="Text" type="s:string" />
+  </message>
+  <message name="TranslateHttpGetOut">
+    <part name="Body" element="s0:string" />
+  </message>
+  <message name="TranslateHttpPostIn">
+    <part name="LanguageMode" type="s:string" />
+    <part name="Text" type="s:string" />
+  </message>
+  <message name="TranslateHttpPostOut">
+    <part name="Body" element="s0:string" />
+  </message>
+  <portType name="TranslationServiceSoap">
+    <operation name="Translate">
+      <documentation>Convert text from one language to another language .Supported languages are English to Chinese, English to French, English to German, English to Italian, English to Japanese, English to Korean, English to Portuguese, English to Spanish, Chinese to English, French to English, French to German, German to English, German to French, Italian to English, Japanese to English, Korean to English, Portuguese to English, Russian to English, Spanish to English.</documentation>
+      <input message="s0:TranslateSoapIn" />
+      <output message="s0:TranslateSoapOut" />
+    </operation>
+  </portType>
+  <portType name="TranslationServiceHttpGet">
+    <operation name="Translate">
+      <documentation>Convert text from one language to another language .Supported languages are English to Chinese, English to French, English to German, English to Italian, English to Japanese, English to Korean, English to Portuguese, English to Spanish, Chinese to English, French to English, French to German, German to English, German to French, Italian to English, Japanese to English, Korean to English, Portuguese to English, Russian to English, Spanish to English.</documentation>
+      <input message="s0:TranslateHttpGetIn" />
+      <output message="s0:TranslateHttpGetOut" />
+    </operation>
+  </portType>
+  <portType name="TranslationServiceHttpPost">
+    <operation name="Translate">
+      <documentation>Convert text from one language to another language .Supported languages are English to Chinese, English to French, English to German, English to Italian, English to Japanese, English to Korean, English to Portuguese, English to Spanish, Chinese to English, French to English, French to German, German to English, German to French, Italian to English, Japanese to English, Korean to English, Portuguese to English, Russian to English, Spanish to English.</documentation>
+      <input message="s0:TranslateHttpPostIn" />
+      <output message="s0:TranslateHttpPostOut" />
+    </operation>
+  </portType>
+  <binding name="TranslationServiceSoap" type="s0:TranslationServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <operation name="Translate">
+      <soap:operation soapAction="http://www.webservicex.net/Translate" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="TranslationServiceHttpGet" type="s0:TranslationServiceHttpGet">
+    <http:binding verb="GET" />
+    <operation name="Translate">
+      <http:operation location="/Translate" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="TranslationServiceHttpPost" type="s0:TranslationServiceHttpPost">
+    <http:binding verb="POST" />
+    <operation name="Translate">
+      <http:operation location="/Translate" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <service name="TranslationService">
+    <port name="TranslationServiceSoap" binding="s0:TranslationServiceSoap">
+      <soap:address location="http://www.webservicex.net/TranslateService.asmx" />
+    </port>
+    <port name="TranslationServiceHttpGet" binding="s0:TranslationServiceHttpGet">
+      <http:address location="http://www.webservicex.net/TranslateService.asmx" />
+    </port>
+    <port name="TranslationServiceHttpPost" binding="s0:TranslationServiceHttpPost">
+      <http:address location="http://www.webservicex.net/TranslateService.asmx" />
+    </port>
+  </service>
+</definitions>
